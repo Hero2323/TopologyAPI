@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc00a419-cda3-4a76-8331-ad71125d81e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TopologyAPI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/capacitorComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/inductorComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/nmosComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/pmosComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/components/resistanceComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/topology.java" afterDir="false" />
+    <list default="true" id="cc00a419-cda3-4a76-8331-ad71125d81e7" name="Changes" comment="Added the file structure, the components classes, the topology class and the API class. the API class still needs testing but with this the functional requirements should be done.">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests/APITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TopologyAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TopologyAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/capacitorComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/capacitorComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/inductorComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/inductorComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/nmosComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/nmosComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/pmosComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/pmosComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/components/resistanceComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/components/resistanceComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/topology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/topology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topologies/testJson.json" beforeDir="false" afterPath="$PROJECT_DIR$/topologies/testJson.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,31 +44,121 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/jimbo/Desktop/InteliJ/TopologyAPI/libraries/commons-io-2.11.0.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="modules" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.APITest.writeTopologyToJson">
+    <configuration name="APITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TopologyAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.APITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="APITest.getDevicesConnectedToNetlistNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TopologyAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.APITest" />
+      <option name="METHOD_NAME" value="getDevicesConnectedToNetlistNode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="APITest.getDevicesInTop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TopologyAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.APITest" />
+      <option name="METHOD_NAME" value="getDevicesInTop" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="APITest.removeTopFromMem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TopologyAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.APITest" />
+      <option name="METHOD_NAME" value="removeTopFromMem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="APITest.writeTopologyToJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TopologyAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.APITest" />
+      <option name="METHOD_NAME" value="writeTopologyToJson" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.APITest.writeTopologyToJson" />
+        <item itemvalue="JUnit.APITest" />
+        <item itemvalue="JUnit.APITest.removeTopFromMem" />
+        <item itemvalue="JUnit.APITest.getDevicesConnectedToNetlistNode" />
+        <item itemvalue="JUnit.APITest.getDevicesInTop" />
       </list>
     </recent_temporary>
   </component>
@@ -82,6 +171,14 @@
       <option name="presentableId" value="Default" />
       <updated>1652872602712</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added the file structure, the components classes, the topology class and the API class. the API class still needs testing but with this the functional requirements should be done.">
+      <created>1652898500902</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652898500902</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,5 +191,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added the file structure, the components classes, the topology class and the API class. the API class still needs testing but with this the functional requirements should be done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the file structure, the components classes, the topology class and the API class. the API class still needs testing but with this the functional requirements should be done." />
   </component>
 </project>

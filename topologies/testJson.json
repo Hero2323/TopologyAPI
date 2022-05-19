@@ -2,15 +2,15 @@
   "components": [
     {
       "netlist": {
-        "t1": "vdd",
-        "t2": "n1"
+        "t1": "n1",
+        "t2": "n2"
       },
-      "id": "res1",
-      "type": "resistor",
-      "resistance": {
-        "default": 100,
+      "id": "cap1",
+      "type": "capacitor",
+      "capacitance": {
+        "default": 50,
         "min": 10,
-        "max": 1000
+        "max": 100
       }
     },
     {
@@ -24,9 +24,9 @@
         "min": 1,
         "max": 2
       },
-      "id": "m1",
-      "type": "nmos"
+      "id": "m2",
+      "type": "pmos"
     }
   ],
-  "id": "top1"
+  "id": "testJson"
 }

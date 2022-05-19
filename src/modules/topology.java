@@ -4,19 +4,28 @@ import modules.components.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-
 import static java.nio.file.Files.writeString;
 
-public class topology {
+/**
+ * This topology class contains a list of components and can apply various operations on them including adding/removing
+ * components, retrieving components connected to certain nodes.
+ * @attribute id - id of this topology
+ * @attribute components - array of component objects that holds all components in this topology
+ */
+class topology {
     String id;
     ArrayList<component> components = new ArrayList<component>();
 
+    /**
+     * The constructor for the topology class, needs a json file to read and parse the information inside it to use
+     * in constructing the topology and its components.
+     * @param inputJsonFilePath the path to the json file containing all the topology information.
+     */
     public topology(String inputJsonFilePath) {
         try {
             createTopologyFromJson(inputJsonFilePath);
@@ -25,8 +34,15 @@ public class topology {
         }
     }
 
+    /**
+     * @return id of this topology
+     */
     public String getId() { return id; }
 
+    /**
+     * This function returns all the components inside this topology.
+     * @return Array of string containing the ids of all the components inside this topology.
+     */
     public String[] getDevices() {
         String[] deviceIds = new String[components.size()];
         for (int i = 0;i<components.size();i++)
@@ -34,12 +50,17 @@ public class topology {
         return deviceIds;
     }
 
+    /**
+     * This function returns all the components that are connected to a certain node in this topology.
+     * @param netlistNode the node that we want all the components that it is connected to.
+     * @return Array of strings that contain the ids of all the components connected to the node sent to this function.
+     */
     public ArrayList<String> getDevicesConnectedToNetlistNode(String netlistNode) {
         ArrayList<String> devices = new ArrayList<String>();
         for (int i = 0;i<components.size();i++) {
             String[] currCompNetList = components.get(i).getNetlist();
             for (int j = 0;j<currCompNetList.length;j++)
-                if (currCompNetList[i].equals(netlistNode)) {
+                if (currCompNetList[j].equals(netlistNode)) {
                     devices.add(components.get(i).getId());
                     break;
                 }
@@ -47,6 +68,13 @@ public class topology {
         return devices;
     }
 
+    /**
+     * This function parses a json file and uses the information inside it to construct the topology
+     * and the components inside it.
+     * It's implemented using a switch case with 5 cases for the 5 components.
+     * @param jsonFilePath the path to the json file containing the topology's information.
+     * @throws Exception most likely FileNotFoundException in the case that the filepath doesn't point to a json file.
+     */
     private void createTopologyFromJson(String jsonFilePath) throws Exception {
         File jsonFile = new File(jsonFilePath);
         String jsonContent = FileUtils.readFileToString(jsonFile, "utf-8");
@@ -134,12 +162,15 @@ public class topology {
                     components.add(new pmosComponent(pmosId, pmosNetList, pmosCharacterization));
                     break;
             }
-
-
         }
-
     }
 
+    /**
+     * This function converts this topology into a json file and writes it disk. It uses each component's createJson
+     * function.
+     * @param writeFilePath the path where the file is to be written. If the file doesn't exist, it will create it,
+     *                      otherwise, it will overwrite the contents inside it.
+     */
     public void writeTopologyToJson(String writeFilePath) {
         JSONObject topJson = new JSONObject();
 
@@ -147,6 +178,7 @@ public class topology {
 
         JSONArray compJson = new JSONArray();
         for (modules.components.component component : components) compJson.put(component.createJson());
+
 
         topJson.put("components", compJson);
         try {

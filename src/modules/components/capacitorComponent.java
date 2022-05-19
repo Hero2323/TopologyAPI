@@ -2,38 +2,41 @@ package modules.components;
 
 import org.json.JSONObject;
 
+/**
+ * This is the capacitor component class which inherits from the base component class
+ * @attribute capacitance - array of floats containing the default, minimum and maximum capacitance that this
+ * component can handle
+ */
 public class capacitorComponent extends component {
     float[] capacitance;
 
+    /**
+     * The constructor of the capacitor component. it overrides the base component constructor.
+     *
+     * @param inputId      the id of this component
+     * @param inputNetlist array of string containing the ids of nodes connected to this component.
+     * @param inputCapacitance  array of floats containing the default, minimum and maximum capacitance that this
+     * component can handle.
+     */
     public capacitorComponent(String inputId, String[] inputNetlist, float[] inputCapacitance) {
         super(inputId, inputNetlist);
         capacitance = inputCapacitance;
     }
 
-    public void setId(String newId) {
-        id = newId;
-    }
-
-    public void setNetlist(String[] newNetlist) {
-        netlist  = newNetlist;
-    }
-
+    /**
+     * @param newCapacitance array of floats containing the default, minimum and maximum capacitance that this
+     *      * component can handle.
+     */
     public void setCapacitance(float[] newCapacitance) {
         capacitance = newCapacitance;
     }
-
-    public String getId() {
-        return id;
-    }
-
     public String getType() {
         return "capacitor";
     }
 
-    public String[] getNetlist() {
-        return netlist;
-    }
-
+    /**
+     * @return Array of floats containing the capacitance of this component.
+     */
     public float[] getCapacitance() {
         return capacitance;
     }

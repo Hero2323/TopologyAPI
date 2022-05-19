@@ -2,38 +2,41 @@ package modules.components;
 
 import org.json.JSONObject;
 
+/**
+ * This is the inductor component class which inherits from the base component class
+ * @attribute inductance - array of floats containing the default, minimum and maximum capacitance that this
+ * component can handle
+ */
 public class inductorComponent extends component {
     float[] inductance;
 
+    /**
+     * The constructor of the inductor component. it overrides the base component constructor.
+     *
+     * @param inputId      the id of this component
+     * @param inputNetlist array of string containing the ids of nodes connected to this component.
+     * @param inputInductance  array of floats containing the default, minimum and maximum inductance that this
+     * component can handle.
+     */
     public inductorComponent(String inputId, String[] inputNetlist, float[] inputInductance) {
         super(inputId, inputNetlist);
         inductance = inputInductance;
     }
 
-    public void setId(String newId) {
-        id = newId;
-    }
-
-    public void setNetlist(String[] newNetlist) {
-        netlist  = newNetlist;
-    }
-
+    /**
+     * @param newInductance array of floats containing the default, minimum and maximum inductance that this
+     *      * component can handle.
+     */
     public void setInductance(float[] newInductance) {
         inductance = newInductance;
     }
-
-    public String getId() {
-        return id;
-    }
-
     public String getType() {
         return "inductor";
     }
 
-    public String[] getNetlist() {
-        return netlist;
-    }
-
+    /**
+     * @return Array of floats containing the inductance of this component.
+     */
     public float[] getInductance() {
         return inductance;
     }
